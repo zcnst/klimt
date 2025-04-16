@@ -8,7 +8,8 @@ on:
       - main
 
 jobs:
-  test:
+  rspec-test:
+    name: Run RSpec tests
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +19,11 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.3.4
+        ruby-version: 3.4.3
         bundler-cache: true
 
     - name: Install dependencies
       run: bundle install
 
     - name: Run tests
-      run: bundle exec rspec --tag ~require_db
+      run: bundle exec rspec --format documentation

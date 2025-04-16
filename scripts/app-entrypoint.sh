@@ -10,5 +10,9 @@ done
 
 >&2 echo "PostgreSQL is up - executing command"
 
+# run migrations
+cd /app
+bundle exec ruby db/migrate.rb
+
 # Execute the passed command
 exec "$@"

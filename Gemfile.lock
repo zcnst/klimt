@@ -68,6 +68,16 @@ GEM
     rubocop-ast (1.44.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
+    rubocop-performance (1.25.0)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
+    rubocop-rspec (3.6.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+    rubocop-sequel (0.4.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1, < 2)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sequel (5.91.0)
@@ -79,14 +89,18 @@ GEM
       rack-protection (= 4.1.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
+    sqlite3 (2.6.0-aarch64-linux-gnu)
+    sqlite3 (2.6.0-arm64-darwin)
+    sqlite3 (2.6.0-x86_64-linux-gnu)
     tilt (2.6.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-24
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   dotenv (~> 3.1)
@@ -97,8 +111,12 @@ DEPENDENCIES
   rackup (~> 2.2)
   rspec (~> 3.10)
   rubocop (~> 1.26)
+  rubocop-performance
+  rubocop-rspec
+  rubocop-sequel
   sequel (~> 5.91)
   sinatra (~> 4.1)
+  sqlite3 (~> 2.6)
 
 BUNDLED WITH
-   2.6.8
+   2.6.7

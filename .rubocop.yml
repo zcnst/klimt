@@ -1,0 +1,7 @@
+plugins:
+  - rubocop-sequel
+  - rubocop-rspec
+  - rubocop-performance
+
+RSpec/MultipleExpectations:
+  Enabled: false

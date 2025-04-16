@@ -14,9 +14,13 @@ gem 'sequel', '~> 5.91'
 group :development do
   gem 'pry', '~> 0.14'
   gem 'rubocop', '~> 1.26'
+  gem 'rubocop-performance'
+  gem 'rubocop-rspec'
+  gem 'rubocop-sequel'
 end
 
 group :test do
   gem 'rack-test', '~> 2.1'
   gem 'rspec', '~> 3.10'
+  gem 'sqlite3', '~> 2.6'
 end

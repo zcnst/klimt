@@ -17,3 +17,8 @@ build:
 
 build-app-image:
     docker build --progress=plain -f Dockerfile.app -t app:latest .
+
+restart-app:
+    @echo 'Restarting app container...'
+    @docker restart klimt-app
+    @echo '✅ App restarted'

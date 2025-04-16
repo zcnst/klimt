@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
-ENV['APP_ENV'] = 'test'
+# use an environment var to run rspec test suite
+ENV['APP_ENV'] = 'rspec'
 
 require 'rspec'
 require 'rack/test'
 require 'dotenv'
+
 require './app'
 
-# docs https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   Dotenv.load
+
   def app
     Sinatra::Application
   end
@@ -24,6 +26,6 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  #  if run a single spec, use more verbose output
+  # if run a single spec, use more verbose output
   config.default_formatter = 'doc' if config.files_to_run.one?
 end
