@@ -2,11 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.2.0)
+    bigdecimal (3.1.9)
     diff-lcs (1.6.1)
+    dotenv (3.1.8)
     logger (1.7.0)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.4)
+    pg (1.5.9)
     puma (6.6.0)
       nio4r (~> 2.0)
     rack (3.1.13)
@@ -35,6 +38,8 @@ GEM
       rspec-support (~> 3.13.0)
     rspec-support (3.13.2)
     ruby2_keywords (0.0.5)
+    sequel (5.91.0)
+      bigdecimal
     sinatra (4.1.1)
       logger (>= 1.6.0)
       mustermann (~> 3.0)
@@ -45,15 +50,18 @@ GEM
     tilt (2.6.0)
 
 PLATFORMS
+  arm64-darwin-24
   ruby
-  x86_64-linux
 
 DEPENDENCIES
+  dotenv (~> 3.1)
+  pg (~> 1.5)
   puma (~> 6.6)
   rack-test (~> 2.1)
   rackup (~> 2.2)
   rspec (~> 3.10)
+  sequel (~> 5.91)
   sinatra (~> 4.1)
 
 BUNDLED WITH
-   2.5.11
+   2.6.8

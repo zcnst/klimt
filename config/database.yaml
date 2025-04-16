@@ -1,0 +1,9 @@
+postgres:
+  adapter: postgres
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] || 5432 %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  max_connections: <%= ENV['DB_MAX_CONNECTIONS'] || 5 %>
+  pool_timeout: <%= ENV['DB_POOL_TIMEOUT'] || 5 %>

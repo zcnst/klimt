@@ -2,11 +2,14 @@ ENV['APP_ENV'] = 'test'
 
 require 'rspec'
 require 'rack/test'
+require 'dotenv'
 require './app'
+
 
 # docs https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   
+  Dotenv.load
   def app
     Sinatra::Application
   end
