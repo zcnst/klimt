@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'Klimt App' do
-
   describe 'GET /not-existing-route' do
     it 'should return status 404 KO' do
       get '/not-existing-route'
