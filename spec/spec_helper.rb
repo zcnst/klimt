@@ -5,13 +5,14 @@ ENV['APP_ENV'] = 'rspec'
 
 require 'rspec'
 require 'rack/test'
+
 require 'dotenv'
+Dotenv.load
+ENV['API_KEY'] ||= 'test-api-key-for-specs'
 
 require './app'
 
 RSpec.configure do |config|
-  Dotenv.load
-
   def app
     Sinatra::Application
   end
