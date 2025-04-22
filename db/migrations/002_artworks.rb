@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+puts "load file #{__FILE__}"
 Sequel.migration do
   up do
     create_table(:artworks) do
@@ -11,12 +12,14 @@ Sequel.migration do
       String :medium, size: 128
       String :art_movement, size: 128
       String :year, size: 64
+      String :dimensions, size: 64
 
-      String :wikipedia_url, size: 512
-      String :thumbnail_url, size: 512
-      String :full_image_url, size: 512
+      String :wikipedia, size: 512
+      String :thumbnail, size: 512
+      String :full_image, size: 512
 
       Text :summary
+      Text :reference_links
       Text :search_keywords
 
       Integer :view_count, null: false, default: 0
@@ -28,7 +31,7 @@ Sequel.migration do
       unique %i[title artist_id]
     end
 
-    add_index :artworks, %i[title artist_id], concurrently: true
+    add_index :artworks, %i[title artist_id]
   end
 
   down do

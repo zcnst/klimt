@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
+puts "load file #{__FILE__}"
 # use an environment var to run rspec test suite
-ENV['APP_ENV'] = 'rspec'
-
+require 'dotenv'
 require 'rspec'
 require 'rack/test'
+require 'faker'
 
-require 'dotenv'
 Dotenv.load
+ENV['APP_ENV'] = 'rspec'
 ENV['API_KEY'] ||= 'test-api-key-for-specs'
 
 require './app'
@@ -19,14 +20,15 @@ RSpec.configure do |config|
 
   config.include Rack::Test::Methods
 
-  # add warnings to the output
   config.warnings = true
+  config.formatter = :documentation
 
   # use rspec-expectations
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  # if run a single spec, use more verbose output
-  config.default_formatter = 'doc' if config.files_to_run.one?
+  config.after(:suite) do
+    DBConnection.reset!
+  end
 end

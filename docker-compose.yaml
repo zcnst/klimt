@@ -20,7 +20,6 @@ services:
   app:
     image: app:latest
     container_name: klimt-app
-    restart: always
     depends_on:
       - db
     environment:

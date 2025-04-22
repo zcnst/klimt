@@ -3,5 +3,24 @@ plugins:
   - rubocop-rspec
   - rubocop-performance
 
-RSpec/MultipleExpectations:
+
+Metrics/BlockLength:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Sequel/ConcurrentIndex:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 3
+
+RSpec/DescribeClass:
+  Enabled: false
+
+AllCops:
+    NewCops: enable

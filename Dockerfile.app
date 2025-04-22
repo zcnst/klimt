@@ -4,6 +4,8 @@ FROM ruby:3.4.3-slim
 # Set working directory
 WORKDIR /app
 
+ENV app_env=production
+
 # Install system dependencies
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
@@ -13,7 +15,7 @@ RUN apt-get update -qq && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install application dependencies
-COPY Gemfile ./
+COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs 4 --retry 3
 
 # Copy application code first

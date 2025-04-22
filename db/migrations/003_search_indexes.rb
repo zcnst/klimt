@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+puts "load file #{__FILE__}"
 # PostgreSQL-specific extensions and indexes only if using PostgreSQL
 Sequel.migration do
   up do
