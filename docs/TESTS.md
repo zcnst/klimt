@@ -1,9 +1,8 @@
-# API Testing Guide
+# Testing Guide
 
-This document provides a comprehensive guide to testing various endpoints of your API. Use the following `curl` commands to verify functionality and error handling.
+This document is a guide to tests the API. 
 
 ---
-
 ## Health Check Endpoint
 
 ### Test the health endpoint (GET)
