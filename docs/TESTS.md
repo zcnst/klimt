@@ -1,6 +1,6 @@
 # Testing Guide
 
-This document is a guide to tests the API. 
+This document is a cheatsheet for API testing. 
 
 ---
 ## Health Check Endpoint
